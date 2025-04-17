@@ -21,11 +21,12 @@ nav {
   justify-content: space-between;
   padding: 1rem 2rem;
   align-items: center;
+  background-color: blue;
 }
 
 .nav-logo a,
 .nav-links a {
-  color: var(--bold-text-color);
+  color: white
 }
 
 .nav-links {

@@ -46,7 +46,7 @@ const Footer = () => {
               </li>
               <li className="youtube">
                 <a
-                  href="https://www.youtube.com/"
+                  href="https://www.youtube.com/@nipurjain5788/"
                   target={"_blank"}
                   rel="noreferrer"
                 >
@@ -55,7 +55,7 @@ const Footer = () => {
               </li>
               <li className="instagram">
                 <a
-                  href="https://www.instagram.com/"
+                  href="https://www.instagram.com/_nipur_jain_/"
                   target={"_blank"}
                   rel="noreferrer"
                 >
@@ -68,11 +68,11 @@ const Footer = () => {
         <div className="footer-bottom">
           Made by{" "}
           <a
-            href="https://www.linkedin.com/in/dunna-avinash"
+            href="https://www.linkedin.com/in/nipur-jain-084b20223/"
             target="_blank"
             rel="noreferrer"
           >
-            Avinash
+            Tech Trio
           </a>{" "}
           © {new Date().getFullYear()}
         </div>
