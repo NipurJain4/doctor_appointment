@@ -7,8 +7,8 @@ const Hero = () => {
     <section className="hero">
       <div className="hero-content">
         <h1>
-          Your Health, <br />
-          Our Responsibility
+        Trusted Care, <br />
+        Every Step of the Way
         </h1>
         <p>
         Smart Healthcare Solution is smart solution for patients to find the best doctors and book the appointment online.
