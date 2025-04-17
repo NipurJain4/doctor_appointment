@@ -10,6 +10,11 @@ import jwt_decode from "jwt-decode";
 
 const Navbar = () => {
   const [iconActive, setIconActive] = useState(false);
+  const [chatbotOpen, setChatbotOpen] = useState(false); // State for chatbot
+  const [chatStep, setChatStep] = useState(0); // Step in chatbot conversation
+  const [symptom, setSymptom] = useState(""); // User's symptom input
+  const [medicine, setMedicine] = useState(""); // Suggested medicine
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [token, setToken] = useState(localStorage.getItem("token") || "");
@@ -25,11 +30,27 @@ const Navbar = () => {
     navigate("/login");
   };
 
+  const prescribeMedicine = (symptom) => {
+    const prescriptions = {
+      cold: "Paracetamol and Vitamin C supplements",
+      fever: "Ibuprofen or Acetaminophen",
+      headache: "Aspirin or Ibuprofen",
+      cough: "Cough syrup with Dextromethorphan",
+    };
+    return prescriptions[symptom.toLowerCase()] || "Consult a doctor for proper diagnosis.";
+  };
+
+  const handleChatSubmit = () => {
+    const prescribed = prescribeMedicine(symptom);
+    setMedicine(prescribed);
+    setChatStep(2); // Move to the final step
+  };
+
   return (
     <header>
       <nav className={iconActive ? "nav-active" : ""}>
         <h2 className="nav-logo">
-          <NavLink to={"/"}>Health Solution</NavLink>
+          <NavLink to={"/"}>Integrated Healthcare Solution</NavLink>
         </h2>
         <ul className="nav-links">
           <li>
@@ -111,6 +132,42 @@ const Navbar = () => {
           />
         )}
       </div>
+
+      {/* Chatbot Button */}
+      <div className="chatbot-button" onClick={() => setChatbotOpen(!chatbotOpen)}>
+        💬 Chatbot
+      </div>
+
+      {/* Chatbot Modal */}
+      {chatbotOpen && (
+        <div className="chatbot-modal">
+          <h3>Health Tips Chatbot</h3>
+          {chatStep === 0 && (
+            <>
+              <p>Hello! What symptom are you experiencing?</p>
+              <input
+                type="text"
+                value={symptom}
+                onChange={(e) => setSymptom(e.target.value)}
+                placeholder="Enter your symptom (e.g., cold)"
+              />
+              <button onClick={() => setChatStep(1)}>Next</button>
+            </>
+          )}
+          {chatStep === 1 && (
+            <>
+              <p>You mentioned: {symptom}. Let me find a suggestion for you.</p>
+              <button onClick={handleChatSubmit}>Get Medicine</button>
+            </>
+          )}
+          {chatStep === 2 && (
+            <>
+              <p>Suggested Medicine: {medicine}</p>
+              <button onClick={() => setChatbotOpen(false)}>Close</button>
+            </>
+          )}
+        </div>
+      )}
     </header>
   );
 };
