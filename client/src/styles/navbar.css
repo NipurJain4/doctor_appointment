@@ -80,7 +80,7 @@ nav {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 300px;
+  width: 320px;
   z-index: 1000;
 }
 
@@ -104,9 +104,10 @@ nav {
   background-color: #0077ff;
   color: white;
   border: none;
-  padding: 8px 12px;
+  padding: 6px 12px;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 20px;
   transition: background-color 0.3s ease;
 }
 
