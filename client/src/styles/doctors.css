@@ -1,7 +1,21 @@
 @import url(app.css);
 
+/* Fade in animation for doctor cards */
+@keyframes fadeInDoctors {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .doctors {
   margin-bottom: 5rem;
+  animation: fadeInDoctors 0.7s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .doctors-card-container {
@@ -10,4 +24,10 @@
   justify-content: space-evenly;
   gap: 3rem;
   width: 100%;
+  animation: fadeInDoctors 0.8s ease;
+  transition: gap 0.3s ease;
+}
+
+.doctors-card-container:hover {
+  gap: 3.2rem;
 }

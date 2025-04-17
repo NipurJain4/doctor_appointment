@@ -8,8 +8,25 @@
   --bold-text-color: #1e375a;
   --light-text-color: rgba(30, 55, 90, 0.7);
   --font-family: "Poppins", sans-serif;
+
+  --transition: all 0.3s ease-in-out;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
+/* === Animations === */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Resets & Base === */
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +40,7 @@ html {
 body {
   font-family: var(--font-family);
   background-color: var(--light-blue);
+  animation: fadeInUp 0.5s ease;
 }
 
 li {
@@ -31,6 +49,11 @@ li {
 
 a {
   text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  opacity: 0.8;
 }
 
 h1,
@@ -40,18 +63,23 @@ h4,
 h5,
 h6 {
   color: var(--bold-text-color);
+  transition: var(--transition);
 }
 
 .page-heading {
   font-size: 2rem;
   text-align: center;
   margin: 0 auto;
+  animation: fadeInUp 0.8s ease;
 }
 
 p {
   color: var(--light-text-color);
+  line-height: 1.6;
+  transition: var(--transition);
 }
 
+/* === Layout Helpers === */
 .flex-center {
   display: flex;
   justify-content: center;
@@ -66,8 +94,10 @@ p {
   gap: 3rem;
   width: 80%;
   margin: 2rem auto;
+  animation: fadeInUp 0.9s ease;
 }
 
+/* === Buttons === */
 .btn {
   color: var(--white);
   background-color: var(--dark-blue);
@@ -80,38 +110,50 @@ p {
   border-radius: 5px;
   cursor: pointer;
   font-family: var(--font-family);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
 }
 
 .btn:hover {
   background-color: var(--darker-blue);
+  box-shadow: var(--hover-shadow);
+  transform: translateY(-2px);
 }
 
 .disabled {
   cursor: auto;
+  opacity: 0.6;
 }
 
 .disabled:hover {
   background-color: var(--dark-blue);
+  box-shadow: none;
+  transform: none;
 }
 
+/* === Layout === */
 .layout-container {
   display: flex;
   gap: 1rem;
 }
 
+/* === Loaders / States === */
 .loader {
   width: 80vw;
   height: 90vh;
   display: flex !important;
   margin: auto;
+  animation: fadeInUp 0.8s ease;
 }
 
 .nothing {
   font-size: 3rem;
   color: rgba(30, 55, 90, 0.3);
   height: 100%;
+  animation: fadeInUp 0.6s ease;
 }
 
+/* === Responsive Typography === */
 @media (max-width: 1024px) {
   html {
     font-size: 90%;

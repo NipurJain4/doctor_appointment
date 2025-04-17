@@ -1,7 +1,7 @@
 @import url(app.css);
 
 footer {
-  background-color: var(--light-text-color);
+  background-color: blue;
 }
 
 .footer {
@@ -15,7 +15,7 @@ footer {
 }
 
 .footer h3 {
-  color: var(--light-blue);
+  color: white;
   margin-bottom: 1rem;
   font-size: 1.2rem;
 }

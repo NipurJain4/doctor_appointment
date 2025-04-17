@@ -1,11 +1,61 @@
 @import url(app.css);
 
+/* Fade-in and slight bounce animation */
+@keyframes fadeInPop {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .error {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 90vh;
+  text-align: center;
+  animation: fadeInPop 0.6s ease-out;
+  background-color: var(--light-blue);
+  color: var(--bold-text-color);
 }
 
 .error h2 {
   font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeInPop 0.8s ease-out;
+  transition: transform 0.3s ease;
+}
+
+.error h2:hover {
+  transform: scale(1.05);
+  color: var(--darker-blue);
+}
+
+.error p {
+  font-size: 1.2rem;
+  color: var(--light-text-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.error .btn {
+  margin-top: 2rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.error .btn:hover {
+  background-color: var(--darker-blue);
+  transform: scale(1.05);
 }

@@ -1,18 +1,60 @@
 @import url(app.css);
 
+:root {
+  --primary-bg: #f4f7fb;
+  --input-bg: #ececec;
+  --border-radius: 8px;
+  --transition: all 0.3s ease-in-out;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .register-section {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
 .register-container {
+  display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 30%;
+  width: 28%;
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.register-container:hover {
+  box-shadow: var(--hover-shadow);
 }
 
 .form-heading {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--darker-blue);
+  text-align: center;
+  border-bottom: 2px solid var(--darker-blue);
+  padding-bottom: 0.5rem;
+  animation: fadeInUp 1s ease;
 }
 
 .register-form {
@@ -26,17 +68,23 @@
 textarea,
 select {
   font-size: 1rem;
-  background-color: rgb(234, 234, 234);
-  padding: 0.8rem 1.5rem;
+  background-color: var(--input-bg);
+  padding: 0.9rem 1.5rem;
   border: none;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   font-family: var(--font-family);
+  transition: var(--transition);
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 0.3s;
 }
 
 .form-input:focus,
 textarea:focus,
 select:focus {
-  outline: none;
+  outline: 2px solid var(--darker-blue);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 64, 128, 0.1);
 }
 
 input::-webkit-outer-spin-button,
@@ -47,34 +95,47 @@ input::-webkit-inner-spin-button {
 
 .login-link {
   color: var(--darker-blue);
+  text-align: center;
+  transition: color 0.2s ease-in-out;
+  opacity: 0;
+  animation: fadeInUp 0.9s ease forwards;
+  animation-delay: 0.5s;
 }
 
+.login-link:hover {
+  color: #004080;
+  text-decoration: underline;
+}
+
+/* Responsive Width Adjustments */
 @media (max-width: 1184px) {
   .register-container {
-    width: 30%;
+    width: 32%;
   }
 }
 
 @media (max-width: 1120px) {
   .register-container {
-    width: 35%;
+    width: 36%;
   }
 }
 
 @media (max-width: 746px) {
   .register-container {
-    width: 40%;
+    width: 45%;
   }
 }
 
 @media (max-width: 600px) {
   .register-container {
-    width: 60%;
+    width: 65%;
+    padding: 2rem;
   }
 }
 
 @media (max-width: 408px) {
   .register-container {
-    width: 70%;
+    width: 80%;
+    padding: 1.5rem;
   }
 }
