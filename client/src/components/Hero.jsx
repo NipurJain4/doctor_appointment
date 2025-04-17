@@ -11,9 +11,7 @@ const Hero = () => {
           Our Responsibility
         </h1>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          tenetur doloremque molestias repellat minus asperiores in aperiam
-          dolor, quaerat praesentium.
+        Smart Healthcare Solution is smart solution for patients to find the best doctors and book the appointment online.
         </p>
       </div>
       <div className="hero-img">
