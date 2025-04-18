@@ -26,7 +26,7 @@ const Footer = () => {
           <h3>About Us</h3>
           <p>
             Smart Healthcare Solution is an all-in-one platform to manage</p>
-            <p>doctor appointments, hospital listings, and patient registration.
+            <p>doctor appointments and patient registration.
           </p>
           <p><FaPhoneAlt /> +91-9876543210</p>
           <p><FaEnvelope /> support@smarthealth.com</p>
