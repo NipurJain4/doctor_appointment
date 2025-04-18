@@ -2,37 +2,67 @@
 
 footer {
   background-color: blue;
+  color: white;
+  padding: 2rem 0 0;
+  font-family: sans-serif;
 }
 
+/* Main layout */
 .footer {
   display: flex;
-  width: 50%;
-  align-items: flex-start;
-  justify-content: space-between;
-  height: 100%;
+  flex-wrap: wrap;
+  max-width: 1200px;
   margin: auto;
-  padding: 2rem 0;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  color: white;
+  
 }
 
+/* Common Titles */
 .footer h3 {
   color: white;
   margin-bottom: 1rem;
   font-size: 1.2rem;
 }
 
-.footer a {
-  color: var(--light-blue);
-}
-
-.footer-links ul {
+/* Links Section */
+.footer-links ul,
+.footer-support ul {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  padding-left: 0;
+  list-style: none;
 }
 
+.footer a {
+  color: var(--light-blue);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* About Us Section */
+.footer-about p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+}
+
+/* Social Icons */
 .social ul {
   display: flex;
   gap: 1rem;
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 1rem;
 }
 
 .social li {
@@ -73,20 +103,64 @@ footer {
   background-color: #ff0000;
 }
 
+/* Newsletter */
+.newsletter h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: white;
+}
+
+.newsletter input {
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 200px;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.newsletter button {
+  padding: 0.5rem 1rem;
+  background-color: var(--dark-blue);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.newsletter button:hover {
+  background-color: var(--light-blue);
+}
+
+/* Bottom Bar */
 .footer-bottom {
   text-align: center;
   background-color: var(--bold-text-color);
   color: var(--light-blue);
-  padding: 0.3rem 0;
+  padding: 0.8rem 0;
+  font-size: 0.9rem;
 }
 
 .footer-bottom a {
   color: var(--dark-blue);
+  font-weight: bold;
 }
 
-@media screen and (max-width: 550px) {
-  .social ul {
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .footer {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+
+  .newsletter input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .newsletter button {
+    width: 100%;
   }
 }
